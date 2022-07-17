@@ -14,7 +14,7 @@
    <top>
       <AnchorPane prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: #ffffff; -fx-max-width: 1200;" BorderPane.alignment="CENTER">
          <children>
-            <Button id="btn-login" fx:id="btLogin" layoutX="286.0" layoutY="320.0" mnemonicParsing="false" onAction="#onBtLoginAction" prefHeight="25.0" prefWidth="74.0" styleClass="btn-login" stylesheets="@login.css" text="login" textFill="WHITE" AnchorPane.leftAnchor="286.0" AnchorPane.topAnchor="320.0">
+            <Button id="btn-login" layoutX="286.0" layoutY="320.0" mnemonicParsing="false" onAction="#onBtLoginAction" prefHeight="25.0" prefWidth="74.0" styleClass="btn-login" stylesheets="@login.css" text="login" textFill="WHITE" AnchorPane.leftAnchor="286.0" AnchorPane.topAnchor="320.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

@@ -10,11 +10,11 @@ import java.io.IOException;
 
 public class App extends Application {
 
-private static Stage stage;
+    private static Stage stage;
 
-private static Scene loginScene;
+    private static Scene loginScene;
 
-private static Scene mainView;
+    private static Scene mainView;
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -25,12 +25,20 @@ private static Scene mainView;
         mainView = new Scene(fxmlMainView.load());
 
         stage.setScene(loginScene);
+        stage.resizableProperty().setValue(false);
         stage.show();
     }
-    public static void changeScreen(Telas Screen){
+
+    public static void changeScreen(Telas Screen) {
         switch (Screen) {
             case LOGIN -> stage.setScene(loginScene);
-            case MAIN -> stage.setScene(mainView);
+            case MAIN -> {
+                stage.setScene(mainView);
+                stage.setAlwaysOnTop(false);
+                stage.setMaxHeight(1200);
+                stage.setMaxWidth(1200);
+
+            }
         }
     }
 

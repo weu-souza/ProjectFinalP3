@@ -1,7 +1,13 @@
 package com.example.p3project.controller;
 
 
-import Dao.DB;
+
+
+
+import DAO.DB;
+import DAO.DbException;
+import DAO.LoginDAO;
+import DTO.LoginDto;
 import Util.Alerts;
 import Util.Telas;
 import com.example.p3project.App;
@@ -10,64 +16,49 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-
-import java.sql.*;
 //    controller da tela de login
 public class loginController {
 
-// texto aonde e inserido o usuario
-@FXML
-private TextField User;
-
-//texto onde e inserido a senha
-@FXML
-private PasswordField password;
-//atributo para guardar o que o usuario escreve no usuario
-String usuario;
-//atributo para guardar o que o usuario escreve na senha
-String senha;
-//metodo para ação de  click do botão de login
+    // texto aonde e inserido o usuario
     @FXML
-    public void onBtLoginAction(){
-        usuario = User.getText();
-       senha = password.getText();
+    private TextField User;
 
-        Connection coon;
-        Statement st = null;
-        ResultSet rs = null;
-        boolean dbUser;
-        boolean dbPass ;
-//aqui abro a conexão com o banco, procuro o nome e a senha na tabela login e comparo se e igual ao que o usuario escreve na tela de login e senha e fecho no final.
-        try {
-            coon = DB.getConnection();
-            st = coon.createStatement();
-            rs = st.executeQuery("select * from login");
+    //texto onde e inserido a senha
+    @FXML
+    private PasswordField password;
 
-            while (rs.next()){
-                dbUser= rs.getString("nome").equals(usuario);
-                dbPass = rs.getString("senha").equals(senha);
-                if (dbUser && dbPass){
-                    App.changeScreen(Telas.MAIN);
+    //metodo para ação de  click do botão de login
+    @FXML
+    public void onBtLoginAction() {
 
+    try {
+        LoginDto objDto = new LoginDto(User.getText(),password.getText());
 
+        LoginDAO usuarioDao = new LoginDAO();
+        ResultSet rsLoginDao = usuarioDao.autenticacaoUsuario(objDto);
 
-                }
-                else {
-                    Alerts.showAlert("Error login","","usuario ou senha invalidos", Alert.AlertType.ERROR);
-                }
+        if (rsLoginDao.next()){
+            // chamar a tela que MainView
+            App.changeScreen(Telas.MAIN);
 
-            }
         }
-        catch (SQLException e){
-            e.printStackTrace();
-        }
-        finally {
+        else {
+        // erro de login
+            Alerts.showAlert("Error login","","usuario ou senha invalidos", Alert.AlertType.ERROR);
 
-            DB.closeResultSet(rs);
-            DB.closeStatement(st);
-            DB.CloseConnection();
         }
+        DB.closeResultSet(rsLoginDao);
+
+    }
+    catch (SQLException e){
+        throw new DbException(e.getMessage());
+    }
+    finally {
+        DB.CloseConnection();
+    }
 
     }
 
