@@ -1,0 +1,4 @@
+user=root
+password=1442
+dburl=jdbc:mysql://localhost:3306/ProjetoP3
+useSSL=false

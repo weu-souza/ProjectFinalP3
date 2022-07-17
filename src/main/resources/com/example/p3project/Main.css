@@ -1,0 +1,12 @@
+.Main-menu{
+
+}
+
+
+.Main-menu:hover{
+
+
+    -fx-border-color: #94618e;
+    -fx-border-width: 0 0 2 0
+
+}
