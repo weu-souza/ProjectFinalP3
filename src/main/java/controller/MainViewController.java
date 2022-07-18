@@ -1,4 +1,4 @@
-package com.example.p3project.controller;
+package controller;
 
 
 import Util.Telas;
@@ -8,23 +8,21 @@ import javafx.scene.control.Button;
 
 public class MainViewController {
     @FXML
-    private Button itemProfessor;
-    @FXML
-    private Button itemDisciplina;
-
-    @FXML
     public void MenuItemProfessor() {
-        System.out.println("Professor");
+        App.changeScreen(Telas.PROFESSOR);
     }
 
     @FXML
     public void MenuItemDisciplina() {
-        System.out.println("Disciplina");
+        App.changeScreen(Telas.DISCIPLINA);
+//        App.changeScreen(Telas.MAIN);
     }
 @FXML
     public void SairButton(){
     App.changeScreen(Telas.LOGIN);
     }
-
-
+@FXML
+    public void MenuButton(){
+        App.changeScreen(Telas.MAIN);
+    }
 }

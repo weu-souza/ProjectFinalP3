@@ -6,15 +6,16 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.p3project.controller.MainViewController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
    <content>
       <BorderPane prefHeight="796.0" style="-fx-background-color: #fcfcfc;">
          <top>
             <AnchorPane prefHeight="65.0" style="-fx-background-color: #e2dcdb;" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="itemProfessor" layoutX="24.0" layoutY="18.0" mnemonicParsing="false" onAction="#MenuItemProfessor" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@Main.css" text="Professor">
+                  <Button fx:id="itemProfessor" layoutX="125.0" layoutY="18.0" mnemonicParsing="false" onAction="#MenuItemProfessor" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@css/utilities.css" text="Professor">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
@@ -22,7 +23,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="itemDisciplina" layoutX="112.0" layoutY="18.0" mnemonicParsing="false" onAction="#MenuItemDisciplina" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@Main.css" text="Disciplina">
+                  <Button fx:id="itemDisciplina" layoutX="220.0" layoutY="18.0" mnemonicParsing="false" onAction="#MenuItemDisciplina" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@css/utilities.css" text="Disciplina">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -30,10 +31,24 @@
                         <Font name="Arial Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="824.0" layoutY="18.0" mnemonicParsing="false" onAction="#SairButton" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@Main.css" text="sair">
+                  <Button layoutX="953.0" layoutY="8.0" mnemonicParsing="false" onAction="#SairButton" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@css/utilities.css" text="sair">
                      <font>
                         <Font name="Arial Bold" size="14.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <SVGPath content="M9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h14.55v3H9v30h14.55v3Zm24.3-9.25-2.15-2.15 5.1-5.1h-17.5v-3h17.4l-5.1-5.1 2.15-2.15 8.8 8.8Z" fill="#94618e" scaleX="0.5" scaleY="0.5" />
+                     </graphic>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </Button>
+                  <Button layoutX="25.0" layoutY="8.0" mnemonicParsing="false" onAction="#MenuButton" scaleX="0.8" scaleY="0.8" style="-fx-background-color: none;">
+                     <graphic>
+                        <SVGPath content="M8 42V18L24.1 6 40 18v24H28.3V27.75h-8.65V42Zm3-3h5.65V24.75H31.3V39H37V19.5L24.1 9.75 11 19.5Zm13-14.65Z" fill="#94618e" />
+                     </graphic>
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -44,6 +59,12 @@
                </BorderPane.margin>
             </AnchorPane>
          </top>
+         <bottom>
+            <AnchorPane prefHeight="50.0" prefWidth="878.0" style="-fx-background-color: #e2dcdb;" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
       </BorderPane>
    </content>
 </ScrollPane>

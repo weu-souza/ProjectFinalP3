@@ -1,4 +1,4 @@
-package com.example.p3project.controller;
+package controller;
 
 
 

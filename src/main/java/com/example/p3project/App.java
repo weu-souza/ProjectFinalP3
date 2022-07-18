@@ -9,21 +9,31 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class App extends Application {
-
+//telas{
     private static Stage stage;
 
     private static Scene loginScene;
 
-    private static Scene mainView;
+    private static Scene mainViewScene;
 
+    private static Scene professorScene;
+
+    private static Scene disciplinaScene;
+//}
     @Override
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;
+
         FXMLLoader fxmlLogin = new FXMLLoader(App.class.getResource("login.fxml"));
         loginScene = new Scene(fxmlLogin.load());
-        FXMLLoader fxmlMainView = new FXMLLoader(App.class.getResource("MainView.fxml"));
-        mainView = new Scene(fxmlMainView.load());
 
+        FXMLLoader fxmlMainView = new FXMLLoader(App.class.getResource("MainView.fxml"));
+        mainViewScene = new Scene(fxmlMainView.load());
+
+        FXMLLoader fxmlProfessor = new FXMLLoader(App.class.getResource("Professor.fxml"));
+        professorScene = new Scene(fxmlProfessor.load());
+        FXMLLoader fxmlDisciplina = new FXMLLoader(App.class.getResource("Disciplina.fxml"));
+        disciplinaScene = new Scene(fxmlDisciplina.load());
         stage.setScene(loginScene);
         stage.resizableProperty().setValue(false);
         stage.show();
@@ -32,13 +42,11 @@ public class App extends Application {
     public static void changeScreen(Telas Screen) {
         switch (Screen) {
             case LOGIN -> stage.setScene(loginScene);
-            case MAIN -> {
-                stage.setScene(mainView);
-                stage.setAlwaysOnTop(false);
-                stage.setMaxHeight(1200);
-                stage.setMaxWidth(1200);
+            case MAIN -> stage.setScene(mainViewScene);
 
-            }
+            case PROFESSOR -> stage.setScene(professorScene);
+
+            case DISCIPLINA -> stage.setScene(disciplinaScene);
         }
     }
 

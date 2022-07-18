@@ -1,5 +1,5 @@
 package Util;
 
 public enum Telas {
-    LOGIN,MAIN
+    LOGIN,MAIN,PROFESSOR,DISCIPLINA
 }

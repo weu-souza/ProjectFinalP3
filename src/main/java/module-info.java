@@ -6,6 +6,6 @@ module com.example.p3project {
 
     opens com.example.p3project to javafx.fxml;
     exports com.example.p3project;
-    exports com.example.p3project.controller;
-    opens com.example.p3project.controller to javafx.fxml;
+    exports controller;
+    opens controller to javafx.fxml;
 }
