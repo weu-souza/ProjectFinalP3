@@ -1,10 +1,10 @@
 package controller;
 
-import com.example.p3project.Telas;
 import com.example.p3project.App;
+import com.example.p3project.Telas;
 import javafx.fxml.FXML;
 
-public class ProfessorController {
+public class alterarProfessorController {
     @FXML
     public void MenuItemProfessor() {
         App.changeScreen(Telas.PROFESSOR);
@@ -39,6 +39,4 @@ public class ProfessorController {
     public void AlterarButton(){
         App.changeScreen(Telas.ALTERAR);
     }
-
-
 }

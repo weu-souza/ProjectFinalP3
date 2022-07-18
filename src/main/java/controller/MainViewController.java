@@ -1,10 +1,9 @@
 package controller;
 
 
-import Util.Telas;
+import com.example.p3project.Telas;
 import com.example.p3project.App;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 
 public class MainViewController {
     @FXML
