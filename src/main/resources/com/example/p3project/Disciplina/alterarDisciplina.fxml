@@ -9,98 +9,124 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AlterarDisciplinaController">
-    <content>
-        <BorderPane prefHeight="796.0" style="-fx-background-color: #fcfcfc;">
-            <top>
-                <AnchorPane prefHeight="65.0" style="-fx-background-color: #e2dcdb;" BorderPane.alignment="CENTER">
-                    <children>
-                        <Button fx:id="itemProfessor" layoutX="125.0" layoutY="18.0" mnemonicParsing="false" onAction="#MenuItemProfessor" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@../css/utilities.css" text="Professor">
-                            <font>
-                                <Font name="Arial Bold" size="14.0" />
-                            </font>
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                        </Button>
-                        <Button fx:id="itemDisciplina" layoutX="220.0" layoutY="18.0" mnemonicParsing="false" onAction="#MenuItemDisciplina" style="-fx-background-color: none; -fx-border-color: #94618e; -fx-border-width: 0 0 2 0;" styleClass="Main-menu" stylesheets="@../css/utilities.css" text="Disciplina">
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                            <font>
-                                <Font name="Arial Bold" size="14.0" />
-                            </font>
-                        </Button>
-                        <Button layoutX="953.0" layoutY="8.0" mnemonicParsing="false" onAction="#SairButton" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@../css/utilities.css" text="sair">
-                            <font>
-                                <Font name="Arial Bold" size="14.0" />
-                            </font>
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                            <graphic>
-                                <SVGPath content="M9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h14.55v3H9v30h14.55v3Zm24.3-9.25-2.15-2.15 5.1-5.1h-17.5v-3h17.4l-5.1-5.1 2.15-2.15 8.8 8.8Z" fill="#94618e" scaleX="0.5" scaleY="0.5" />
-                            </graphic>
-                            <padding>
-                                <Insets right="20.0" />
-                            </padding>
-                        </Button>
-                        <Button layoutX="25.0" layoutY="8.0" mnemonicParsing="false" onAction="#MenuButton" scaleX="0.8" scaleY="0.8" style="-fx-background-color: none;">
-                            <graphic>
-                                <SVGPath content="M8 42V18L24.1 6 40 18v24H28.3V27.75h-8.65V42Zm3-3h5.65V24.75H31.3V39H37V19.5L24.1 9.75 11 19.5Zm13-14.65Z" fill="#94618e" />
-                            </graphic>
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                        </Button>
-                    </children>
-                    <BorderPane.margin>
-                        <Insets />
-                    </BorderPane.margin>
-                </AnchorPane>
-            </top>
-            <bottom>
-                <AnchorPane prefHeight="50.0" prefWidth="878.0" style="-fx-background-color: #e2dcdb;" BorderPane.alignment="CENTER" />
-            </bottom>
-            <left>
-                <AnchorPane prefHeight="681.0" prefWidth="144.0" style="-fx-background-color: #e2dcdb; -fx-border-color: #fcfcfc; -fx-border-width: 0 2 2 0;" BorderPane.alignment="CENTER">
-                    <children>
-                        <Button alignment="BASELINE_LEFT" layoutX="2.0" layoutY="7.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#AdicionarButton" prefHeight="50.0" prefWidth="133.0" styleClass="btn" stylesheets="@../css/utilities.css" text="Adicionar" textFill="WHITE">
-                            <graphic>
-                                <SVGPath content="M22.65 34h3v-8.3H34v-3h-8.35V14h-3v8.7H14v3h8.65ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z" fill="WHITE" scaleX="0.5" scaleY="0.5" scaleZ="0.0" />
-                            </graphic>
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                            <font>
-                                <Font name="Arial Bold" size="14.0" />
-                            </font>
-                        </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="2.0" layoutY="60.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#RemoverButton" prefHeight="50.0" prefWidth="133.0" styleClass="btn" stylesheets="@../css/utilities.css" text="Remover" textFill="WHITE">
-                            <graphic>
-                                <SVGPath content="M13.05 42q-1.2 0-2.1-.9-.9-.9-.9-2.1V10.5H8v-3h9.4V6h13.2v1.5H40v3h-2.05V39q0 1.2-.9 2.1-.9.9-2.1.9Zm21.9-31.5h-21.9V39h21.9Zm-16.6 24.2h3V14.75h-3Zm8.3 0h3V14.75h-3Zm-13.6-24.2V39Z" fill="WHITE" scaleX="0.5" scaleY="0.5" />
-                            </graphic>
-                            <font>
-                                <Font name="Arial Bold" size="14.0" />
-                            </font>
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                        </Button>
-                        <Button alignment="BASELINE_LEFT" layoutX="2.0" layoutY="113.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#AlterarButton" prefHeight="50.0" prefWidth="133.0" style="-fx-background-color: #49274a;" stylesheets="@../css/utilities.css" text="Alterar" textFill="WHITE">
-                            <graphic>
-                                <SVGPath content="M9.8 31.45q-1-1.8-1.4-3.625Q8 26 8 24.1q0-6.55 4.725-11.275Q17.45 8.1 24 8.1h2.15l-4-4 1.95-1.95 7.45 7.45-7.45 7.45-2-2 3.95-3.95H24q-5.35 0-9.175 3.825Q11 18.75 11 24.1q0 1.45.275 2.75t.675 2.45ZM23.8 46l-7.45-7.45 7.45-7.45 1.95 1.95-4 4H24q5.35 0 9.175-3.825Q37 29.4 37 24.05q0-1.45-.25-2.75T36 18.85l2.15-2.15q1 1.8 1.425 3.625Q40 22.15 40 24.05q0 6.55-4.725 11.275Q30.55 40.05 24 40.05h-2.25l4 4Z" fill="WHITE" scaleX="0.5" scaleY="0.5" />
-                            </graphic>
-                            <font>
-                                <Font name="Arial Bold" size="14.0" />
-                            </font>
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                        </Button>
-                    </children>
-                </AnchorPane>
-            </left>
-        </BorderPane>
-    </content>
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.AlterarDisciplinaController">
+    <BorderPane prefHeight="796.0" style="-fx-background-color: #fcfcfc;">
+        <top>
+            <AnchorPane prefHeight="65.0" style="-fx-background-color: #e2dcdb;" BorderPane.alignment="CENTER">
+                <BorderPane.margin>
+                    <Insets/>
+                </BorderPane.margin>
+                <Button layoutX="125.0" layoutY="18.0" mnemonicParsing="false"
+                        onAction="#MenuItemProfessor" style="-fx-background-color: none;" styleClass="Main-menu"
+                        stylesheets="@../css/utilities.css" text="Professor">
+                    <font>
+                        <Font name="Arial Bold" size="14.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+                <Button layoutX="220.0" layoutY="18.0" mnemonicParsing="false"
+                        onAction="#MenuItemDisciplina"
+                        style="-fx-background-color: none; -fx-border-color: #94618e; -fx-border-width: 0 0 2 0;"
+                        styleClass="Main-menu" stylesheets="@../css/utilities.css" text="Disciplina">
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                    <font>
+                        <Font name="Arial Bold" size="14.0"/>
+                    </font>
+                </Button>
+                <Button layoutX="953.0" layoutY="8.0" mnemonicParsing="false" onAction="#SairButton"
+                        style="-fx-background-color: none;" styleClass="Main-menu"
+                        stylesheets="@../css/utilities.css" text="sair">
+                    <font>
+                        <Font name="Arial Bold" size="14.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                    <graphic>
+                        <SVGPath
+                                content="M9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h14.55v3H9v30h14.55v3Zm24.3-9.25-2.15-2.15 5.1-5.1h-17.5v-3h17.4l-5.1-5.1 2.15-2.15 8.8 8.8Z"
+                                fill="#94618e" scaleX="0.5" scaleY="0.5"/>
+                    </graphic>
+                    <padding>
+                        <Insets right="20.0"/>
+                    </padding>
+                </Button>
+                <Button layoutX="25.0" layoutY="8.0" mnemonicParsing="false" onAction="#MenuButton" scaleX="0.8"
+                        scaleY="0.8" style="-fx-background-color: none;">
+                    <graphic>
+                        <SVGPath
+                                content="M8 42V18L24.1 6 40 18v24H28.3V27.75h-8.65V42Zm3-3h5.65V24.75H31.3V39H37V19.5L24.1 9.75 11 19.5Zm13-14.65Z"
+                                fill="#94618e"/>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+            </AnchorPane>
+        </top>
+        <bottom>
+            <AnchorPane prefHeight="50.0" prefWidth="878.0" style="-fx-background-color: #e2dcdb;"
+                        BorderPane.alignment="CENTER"/>
+        </bottom>
+        <left>
+            <AnchorPane prefHeight="681.0" prefWidth="144.0"
+                        style="-fx-background-color: #e2dcdb; -fx-border-color: #fcfcfc; -fx-border-width: 0 2 2 0;"
+                        BorderPane.alignment="CENTER">
+                <Button alignment="BASELINE_LEFT" layoutX="2.0" layoutY="7.0" mnemonicParsing="false"
+                        nodeOrientation="LEFT_TO_RIGHT" onAction="#AdicionarButton" prefHeight="50.0"
+                        prefWidth="133.0" styleClass="btn" stylesheets="@../css/utilities.css" text="Adicionar"
+                        textFill="WHITE">
+                    <graphic>
+                        <SVGPath
+                                content="M22.65 34h3v-8.3H34v-3h-8.35V14h-3v8.7H14v3h8.65ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z"
+                                fill="WHITE" scaleX="0.5" scaleY="0.5" scaleZ="0.0"/>
+                    </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                    <font>
+                        <Font name="Arial Bold" size="14.0"/>
+                    </font>
+                </Button>
+                <Button alignment="BASELINE_LEFT" layoutX="2.0" layoutY="60.0" mnemonicParsing="false"
+                        nodeOrientation="LEFT_TO_RIGHT" onAction="#RemoverButton" prefHeight="50.0"
+                        prefWidth="133.0" styleClass="btn" stylesheets="@../css/utilities.css" text="Remover"
+                        textFill="WHITE">
+                    <graphic>
+                        <SVGPath
+                                content="M13.05 42q-1.2 0-2.1-.9-.9-.9-.9-2.1V10.5H8v-3h9.4V6h13.2v1.5H40v3h-2.05V39q0 1.2-.9 2.1-.9.9-2.1.9Zm21.9-31.5h-21.9V39h21.9Zm-16.6 24.2h3V14.75h-3Zm8.3 0h3V14.75h-3Zm-13.6-24.2V39Z"
+                                fill="WHITE" scaleX="0.5" scaleY="0.5"/>
+                    </graphic>
+                    <font>
+                        <Font name="Arial Bold" size="14.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+                <Button alignment="BASELINE_LEFT" layoutX="2.0" layoutY="113.0" mnemonicParsing="false"
+                        nodeOrientation="LEFT_TO_RIGHT" onAction="#AlterarButton" prefHeight="50.0"
+                        prefWidth="133.0" style="-fx-background-color: #49274a;" stylesheets="@../css/utilities.css"
+                        text="Alterar" textFill="WHITE">
+                    <graphic>
+                        <SVGPath
+                                content="M9.8 31.45q-1-1.8-1.4-3.625Q8 26 8 24.1q0-6.55 4.725-11.275Q17.45 8.1 24 8.1h2.15l-4-4 1.95-1.95 7.45 7.45-7.45 7.45-2-2 3.95-3.95H24q-5.35 0-9.175 3.825Q11 18.75 11 24.1q0 1.45.275 2.75t.675 2.45ZM23.8 46l-7.45-7.45 7.45-7.45 1.95 1.95-4 4H24q5.35 0 9.175-3.825Q37 29.4 37 24.05q0-1.45-.25-2.75T36 18.85l2.15-2.15q1 1.8 1.425 3.625Q40 22.15 40 24.05q0 6.55-4.725 11.275Q30.55 40.05 24 40.05h-2.25l4 4Z"
+                                fill="WHITE" scaleX="0.5" scaleY="0.5"/>
+                    </graphic>
+                    <font>
+                        <Font name="Arial Bold" size="14.0"/>
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </Button>
+            </AnchorPane>
+        </left>
+    </BorderPane>
 </ScrollPane>
