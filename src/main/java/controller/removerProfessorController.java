@@ -1,7 +1,7 @@
 package controller;
 
 import com.example.p3project.App;
-import com.example.p3project.Telas;
+import Util.Telas;
 import javafx.fxml.FXML;
 
 public class removerProfessorController {

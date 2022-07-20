@@ -9,7 +9,7 @@ import DAO.DbException;
 import DAO.LoginDAO;
 import DTO.LoginDto;
 import Util.Alerts;
-import com.example.p3project.Telas;
+import Util.Telas;
 import com.example.p3project.App;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;

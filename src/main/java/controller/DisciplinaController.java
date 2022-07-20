@@ -1,6 +1,6 @@
 package controller;
 
-import com.example.p3project.Telas;
+import Util.Telas;
 import com.example.p3project.App;
 import javafx.fxml.FXML;
 

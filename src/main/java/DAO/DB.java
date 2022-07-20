@@ -69,4 +69,15 @@ public static void closeResultSet(ResultSet rs){
         }
 
     }
+
+    public static void closePSTM(PreparedStatement pstm){
+        if (pstm != null) {
+            try {
+                pstm.close();
+            } catch (SQLException e) {
+                throw new DbException(e.getMessage());
+            }
+        }
+
+    }
 }

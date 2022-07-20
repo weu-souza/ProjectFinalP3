@@ -1,5 +1,6 @@
 package com.example.p3project;
 
+import Util.Telas;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -37,6 +38,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         stage = primaryStage;
+
 //       caminho das telas {
         FXMLLoader fxmlLogin = new FXMLLoader(App.class.getResource("login.fxml"));
         loginScene = new Scene(fxmlLogin.load());
@@ -70,9 +72,11 @@ public class App extends Application {
 
 
 //    }
+
         stage.setScene(loginScene);
 
         stage.resizableProperty().setValue(false);
+
         stage.show();
     }
 
