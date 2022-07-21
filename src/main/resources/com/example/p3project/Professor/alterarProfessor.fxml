@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.alterarProfessorController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Professor.alterarProfessorController">
     <BorderPane prefHeight="796.0" style="-fx-background-color: #fcfcfc;">
         <top>
             <AnchorPane prefHeight="65.0" style="-fx-background-color: #e2dcdb;" BorderPane.alignment="CENTER">
@@ -64,35 +64,28 @@
         </bottom>
         <center>
             <AnchorPane prefHeight="681.0" prefWidth="892.0" BorderPane.alignment="CENTER">
-                <Pane layoutX="89.0" layoutY="75.0" prefHeight="549.0" prefWidth="717.0"
-                      style="-fx-border-color: #94618e; -fx-border-width: 10;">
-                    <Text fill="#511a1a" layoutX="249.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0"
-                          text="Dados do professor">
+                <Pane layoutX="89.0" layoutY="75.0" prefHeight="549.0" prefWidth="717.0" style="-fx-border-color: #94618e; -fx-border-width: 10;">
+                    <Text fill="#511a1a" layoutX="249.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dados do professor">
                         <font>
-                            <Font name="Arial Black" size="20.0"/>
+                            <Font name="Arial Black" size="20.0" />
                         </font>
                     </Text>
-                    <TextField alignment="CENTER" layoutX="271.0" layoutY="186.0" prefHeight="26.0" prefWidth="172.0"
-                               promptText="ID do professor"
-                               style="-fx-background-color: transparent; -fx-border-color: #94618e; -fx-border-width: 0 0 3 0;">
+                    <TextField fx:id="idAlterar" alignment="CENTER" layoutX="271.0" layoutY="186.0" prefHeight="26.0" prefWidth="172.0" promptText="ID do professor" style="-fx-background-color: transparent; -fx-border-color: #94618e; -fx-border-width: 0 0 3 0;">
                         <font>
-                            <Font name="Arial Bold Italic" size="14.0"/>
+                            <Font name="Arial Bold Italic" size="14.0" />
                         </font>
                     </TextField>
-                    <TextField alignment="CENTER" layoutX="268.0" layoutY="223.0" prefHeight="26.0" prefWidth="172.0"
-                               promptText="Novo nome"
-                               style="-fx-background-color: transparent; -fx-border-color: #94618e; -fx-border-width: 0 0 3 0;">
+                    <TextField fx:id="nomeAlterar" alignment="CENTER" layoutX="268.0" layoutY="223.0" prefHeight="26.0" prefWidth="172.0" promptText="Novo nome" style="-fx-background-color: transparent; -fx-border-color: #94618e; -fx-border-width: 0 0 3 0;">
                         <font>
-                            <Font name="Arial Bold Italic" size="14.0"/>
+                            <Font name="Arial Bold Italic" size="14.0" />
                         </font>
                     </TextField>
-                    <Button layoutX="296.0" layoutY="269.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="117.0"
-                            styleClass="btn" stylesheets="@../css/utilities.css" text="Enviar" textFill="WHITE">
+                    <Button layoutX="296.0" layoutY="269.0" mnemonicParsing="false" onAction="#btnEnviar" prefHeight="25.0" prefWidth="117.0" styleClass="btn" stylesheets="@../css/utilities.css" text="Enviar" textFill="WHITE">
                         <font>
-                            <Font name="Arial Black" size="14.0"/>
+                            <Font name="Arial Black" size="14.0" />
                         </font>
                         <cursor>
-                            <Cursor fx:constant="HAND"/>
+                            <Cursor fx:constant="HAND" />
                         </cursor>
                     </Button>
                 </Pane>
@@ -111,7 +104,7 @@
                         <SVGPath content="M22.65 34h3v-8.3H34v-3h-8.35V14h-3v8.7H14v3h8.65ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z" fill="WHITE" scaleX="0.5" scaleY="0.5" />
                     </graphic>
                 </Button>
-                <Button alignment="BASELINE_LEFT" layoutX="2.0" layoutY="60.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#RemoverButton" prefHeight="50.0" prefWidth="133.0" styleClass="btn" stylesheets="@../css/utilities.css" text="Remover" textFill="WHITE">
+                <Button alignment="BASELINE_LEFT" layoutX="2.0" layoutY="60.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="133.0" styleClass="btn" stylesheets="@../css/utilities.css" text="Remover" textFill="WHITE">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>

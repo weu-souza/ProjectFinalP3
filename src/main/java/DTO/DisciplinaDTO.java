@@ -2,14 +2,18 @@ package DTO;
 
 public class DisciplinaDTO {
     private String nomeDisciplina;
-    private int ID;
+    private int ID, codProfessor;
 
-    public DisciplinaDTO(String nomeDisciplina) {
+    public DisciplinaDTO(String nomeDisciplina, int ID,int codProfessor) {
         setNomeDisciplina(nomeDisciplina);
+        setID(ID);
+        setCodProfessor(codProfessor);
     }
 
-    public DisciplinaDTO(int ID) {
-        setID(ID);
+
+    public DisciplinaDTO(String nomeDisciplina, int codProfessor) {
+        setNomeDisciplina(nomeDisciplina);
+        setCodProfessor(codProfessor);
     }
 
     public String getNomeDisciplina() {
@@ -26,5 +30,13 @@ public class DisciplinaDTO {
 
     public void setID(int ID) {
         this.ID = ID;
+    }
+
+    public int getCodProfessor() {
+        return codProfessor;
+    }
+
+    public void setCodProfessor(int codProfessor) {
+        this.codProfessor = codProfessor;
     }
 }

@@ -15,5 +15,9 @@ module com.example.p3project {
     opens Util to javafx.fxml;
     exports DAO;
     opens DAO to javafx.fxml;
+    exports controller.Professor;
+    opens controller.Professor to javafx.fxml;
+    exports controller.Disciplina;
+    opens controller.Disciplina to javafx.fxml;
 
 }

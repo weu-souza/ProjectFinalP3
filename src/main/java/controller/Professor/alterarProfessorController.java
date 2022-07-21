@@ -1,4 +1,4 @@
-package controller;
+package controller.Professor;
 
 import DAO.ProfessorDAO;
 import DTO.ProfessorDTO;
@@ -9,9 +9,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
-public class adicionarProfessorController {
-    @FXML
-    private TextField addProfessor;
+public class alterarProfessorController {
+    @FXML private TextField idAlterar, nomeAlterar;
 
     @FXML
     public void MenuItemProfessor() {
@@ -39,21 +38,27 @@ public class adicionarProfessorController {
         App.changeScreen(Telas.ADICIONAR);
     }
 
-    @FXML
-    public void RemoverButton() {
-        App.changeScreen(Telas.REMOVER);
-    }
 
     @FXML
     public void AlterarButton() {
         App.changeScreen(Telas.ALTERAR);
     }
+    @FXML
+    public void btnEnviar(){
+Alterar();
+    }
 
-    public void btnEnviarProfessor() {
-        ProfessorDTO p = new ProfessorDTO(addProfessor.getText());
-        ProfessorDAO objDao = new ProfessorDAO();
-        objDao.adicionarProfessor(p);
-        Alerts.showAlert("","","Enviado", Alert.AlertType.CONFIRMATION);
+    public void Alterar(){
+       int id;
+       String nome;
+       id = Integer.parseInt(idAlterar.getText());
+       nome = nomeAlterar.getText();
+        ProfessorDTO  professor = new ProfessorDTO(nome,id);
+        ProfessorDAO objProfDao = new ProfessorDAO();
+        objProfDao.atualizarProfessor(professor);
+        Alerts.showAlert("","","Enviado, atualize", Alert.AlertType.CONFIRMATION);
 
     }
 }
+
+

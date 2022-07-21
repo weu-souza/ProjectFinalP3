@@ -8,14 +8,13 @@ public class ProfessorDTO {
         setNome(nome);
     }
 
-    public ProfessorDTO(int ID) {
-        setID(ID);
-    }
+
 
     public ProfessorDTO(String nome, int ID) {
        setNome(nome);
        setID(ID);
     }
+
 
     public String getNome() {
         return nome;

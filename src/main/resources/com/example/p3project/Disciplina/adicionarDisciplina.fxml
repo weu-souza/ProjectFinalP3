@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adicionarDisciplinaController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Disciplina.adicionarDisciplinaController">
     <BorderPane prefHeight="796.0" style="-fx-background-color: #fcfcfc;">
         <top>
             <AnchorPane prefHeight="65.0" style="-fx-background-color: #e2dcdb;" BorderPane.alignment="CENTER">
@@ -75,7 +75,7 @@
                         <Font name="Arial Bold" size="14.0" />
                     </font>
                 </Button>
-                <Button alignment="BASELINE_LEFT" layoutX="2.0" layoutY="60.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#RemoverButton" prefHeight="50.0" prefWidth="133.0" styleClass="btn" stylesheets="@../css/utilities.css" text="Remover" textFill="WHITE">
+                <Button alignment="BASELINE_LEFT" layoutX="2.0" layoutY="60.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="50.0" prefWidth="133.0" styleClass="btn" stylesheets="@../css/utilities.css" text="Remover" textFill="WHITE">
                     <graphic>
                         <SVGPath content="M13.05 42q-1.2 0-2.1-.9-.9-.9-.9-2.1V10.5H8v-3h9.4V6h13.2v1.5H40v3h-2.05V39q0 1.2-.9 2.1-.9.9-2.1.9Zm21.9-31.5h-21.9V39h21.9Zm-16.6 24.2h3V14.75h-3Zm8.3 0h3V14.75h-3Zm-13.6-24.2V39Z" fill="WHITE" scaleX="0.5" scaleY="0.5" />
                     </graphic>
@@ -100,38 +100,29 @@
             </AnchorPane>
         </left>
       <center>
-          <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FCFCFC;"
-                BorderPane.alignment="CENTER">
-              <Pane layoutX="89.0" layoutY="75.0" prefHeight="549.0" prefWidth="717.0"
-                    style="-fx-border-color: #94618e; -fx-border-width: 10;">
-                  <TextField alignment="CENTER" layoutX="271.0" layoutY="186.0" prefHeight="26.0" prefWidth="172.0"
-                             promptText="Nome da disciplina"
-                             style="-fx-background-color: transparent; -fx-border-color: #94618e; -fx-border-width: 0 0 3 0;">
+          <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FCFCFC;" BorderPane.alignment="CENTER">
+              <Pane layoutX="89.0" layoutY="75.0" prefHeight="549.0" prefWidth="717.0" style="-fx-border-color: #94618e; -fx-border-width: 10;">
+                  <TextField fx:id="addDisciplina" alignment="CENTER" layoutX="271.0" layoutY="186.0" prefHeight="26.0" prefWidth="172.0" promptText="Nome da disciplina" style="-fx-background-color: transparent; -fx-border-color: #94618e; -fx-border-width: 0 0 3 0;">
                       <font>
-                          <Font name="Arial Bold Italic" size="14.0"/>
+                          <Font name="Arial Bold Italic" size="14.0" />
                       </font>
                   </TextField>
-                  <TextField alignment="CENTER" layoutX="271.0" layoutY="223.0" prefHeight="26.0" prefWidth="172.0"
-                             promptText="Codigo do professor"
-                             style="-fx-background-color: transparent; -fx-border-color: #94618e; -fx-border-width: 0 0 3 0;">
+                  <TextField fx:id="addCodProfessor" alignment="CENTER" layoutX="271.0" layoutY="223.0" prefHeight="26.0" prefWidth="172.0" promptText="Codigo do professor" style="-fx-background-color: transparent; -fx-border-color: #94618e; -fx-border-width: 0 0 3 0;">
                       <font>
-                          <Font name="Arial Bold" size="14.0"/>
+                          <Font name="Arial Bold" size="14.0" />
                       </font>
                   </TextField>
-                  <Button layoutX="296.0" layoutY="269.0" mnemonicParsing="false" onAction="#EnviarDisciplinaButton"
-                          prefHeight="25.0" prefWidth="117.0" styleClass="btn" stylesheets="@../css/utilities.css"
-                          text="Enviar" textFill="WHITE">
+                  <Button layoutX="296.0" layoutY="269.0" mnemonicParsing="false" onAction="#EnviarDisciplinaButton" prefHeight="25.0" prefWidth="117.0" styleClass="btn" stylesheets="@../css/utilities.css" text="Enviar" textFill="WHITE">
                       <font>
-                          <Font name="Arial Black" size="14.0"/>
+                          <Font name="Arial Black" size="14.0" />
                       </font>
                       <cursor>
-                          <Cursor fx:constant="HAND"/>
+                          <Cursor fx:constant="HAND" />
                       </cursor>
                   </Button>
-                  <Text fill="#511a1a" fontSmoothingType="LCD" layoutX="249.0" layoutY="150.0" strokeType="OUTSIDE"
-                        strokeWidth="0.0" text="Dados da disciplina" textAlignment="CENTER">
+                  <Text fill="#511a1a" fontSmoothingType="LCD" layoutX="249.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dados da disciplina" textAlignment="CENTER">
                       <font>
-                          <Font name="Arial Black" size="20.0"/>
+                          <Font name="Arial Black" size="20.0" />
                       </font>
                   </Text>
               </Pane>

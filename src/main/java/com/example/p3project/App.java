@@ -22,16 +22,12 @@ public class App extends Application {
     private static Scene disciplinaScene;
 
     private static Scene adicionarScene;
-
-    private static Scene removerScene;
-
     private static Scene alterarScene;
 
     private static Scene adicionarDScene;
 
     private static Scene alterarDScene;
 
-    private static Scene removerDScene;
 
 
 //}
@@ -55,9 +51,6 @@ public class App extends Application {
         FXMLLoader fxmlAddP = new FXMLLoader(App.class.getResource("Professor/adicionarProfessor.fxml"));
         adicionarScene = new Scene(fxmlAddP.load());
 
-        FXMLLoader fxmlRemoverP = new FXMLLoader(App.class.getResource("Professor/removerProfessor.fxml"));
-        removerScene = new Scene(fxmlRemoverP.load());
-
         FXMLLoader fxmlAlterarP = new FXMLLoader(App.class.getResource("Professor/alterarProfessor.fxml"));
         alterarScene = new Scene(fxmlAlterarP.load());
 
@@ -67,8 +60,6 @@ public class App extends Application {
         FXMLLoader fxmlAdicionarD = new FXMLLoader(App.class.getResource("Disciplina/adicionarDisciplina.fxml"));
         adicionarDScene  = new Scene(fxmlAdicionarD.load());
 
-        FXMLLoader fxmlRmvD = new FXMLLoader(App.class.getResource("Disciplina/removerDisciplina.fxml"));
-        removerDScene = new Scene(fxmlRmvD.load());
 
 
 //    }
@@ -93,13 +84,10 @@ public class App extends Application {
 
             case ALTERAR -> stage.setScene(alterarScene);
 
-            case REMOVER ->  stage.setScene(removerScene);
-
             case ADDDISCIPLINA -> stage.setScene(adicionarDScene);
 
             case ALTDISCIPLINA -> stage.setScene(alterarDScene);
 
-            case RMVDISCIPLINA -> stage.setScene(removerDScene);
         }
     }
 
