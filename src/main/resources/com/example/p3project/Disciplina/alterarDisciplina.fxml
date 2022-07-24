@@ -15,7 +15,7 @@
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Disciplina.AlterarDisciplinaController">
     <BorderPane prefHeight="796.0" style="-fx-background-color: #fcfcfc;">
         <top>
-            <AnchorPane prefHeight="65.0" style="-fx-background-color: #e2dcdb;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="65.0" prefWidth="1400.0" style="-fx-background-color: #e2dcdb;" BorderPane.alignment="CENTER">
                 <BorderPane.margin>
                     <Insets />
                 </BorderPane.margin>
@@ -35,7 +35,7 @@
                         <Font name="Arial Bold" size="14.0" />
                     </font>
                 </Button>
-                <Button layoutX="953.0" layoutY="8.0" mnemonicParsing="false" onAction="#SairButton" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@../css/utilities.css" text="sair">
+                <Button layoutX="1301.0" layoutY="15.0" mnemonicParsing="false" onAction="#SairButton" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@../css/utilities.css" text="sair">
                     <font>
                         <Font name="Arial Bold" size="14.0" />
                     </font>
@@ -102,7 +102,7 @@
       <center>
          <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
-               <Pane layoutX="89.0" layoutY="75.0" prefHeight="549.0" prefWidth="717.0" style="-fx-border-color: #94618e; -fx-border-width: 10;">
+               <Pane layoutX="270.0" layoutY="66.0" prefHeight="549.0" prefWidth="717.0" style="-fx-border-color: #94618e; -fx-border-width: 10;">
                   <children>
                      <TextField fx:id="idAlterarD" alignment="CENTER" layoutX="271.0" layoutY="186.0" prefHeight="26.0" prefWidth="172.0" promptText="ID disciplina" style="-fx-background-color: transparent; -fx-border-color: #94618e; -fx-border-width: 0 0 3 0;">
                         <font>

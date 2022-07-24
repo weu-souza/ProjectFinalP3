@@ -15,13 +15,13 @@
 <?import javafx.scene.text.Text?>
 
 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Professor.ProfessorController">
-    <BorderPane prefHeight="796.0" style="-fx-background-color: #fcfcfc;">
+    <BorderPane style="-fx-background-color: #fcfcfc;">
         <top>
-            <AnchorPane prefHeight="65.0" style="-fx-background-color: #e2dcdb;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="65.0" prefWidth="1400.0" style="-fx-background-color: #e2dcdb;" BorderPane.alignment="CENTER">
                 <BorderPane.margin>
                     <Insets />
                 </BorderPane.margin>
-                <Button layoutX="125.0" layoutY="18.0" mnemonicParsing="false" onAction="#atualizarTabela" style="-fx-background-color: none; -fx-border-color: #94618e; -fx-border-width: 0 0 2 0;" styleClass="Main-menu" stylesheets="@../css/utilities.css" text="Professor">
+                <Button layoutX="125.0" layoutY="18.0" mnemonicParsing="false" onAction="#MenuItemProfessor" style="-fx-background-color: none; -fx-border-color: #94618e; -fx-border-width: 0 0 2 0;" styleClass="Main-menu" stylesheets="@../css/utilities.css" text="Professor">
                     <font>
                         <Font name="Arial Bold" size="14.0" />
                     </font>
@@ -37,7 +37,7 @@
                         <Font name="Arial Bold" size="14.0" />
                     </font>
                 </Button>
-                <Button layoutX="953.0" layoutY="8.0" mnemonicParsing="false" onAction="#SairButton" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@../css/utilities.css" text="sair">
+                <Button layoutX="1301.0" layoutY="15.0" mnemonicParsing="false" onAction="#SairButton" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@../css/utilities.css" text="sair" AnchorPane.rightAnchor="0.0">
                     <font>
                         <Font name="Arial Bold" size="14.0" />
                     </font>
@@ -51,7 +51,7 @@
                         <Insets right="20.0" />
                     </padding>
                 </Button>
-                <Button contentDisplay="CENTER" layoutX="25.0" layoutY="8.0" mnemonicParsing="false" onAction="#MenuButton" scaleX="0.8" scaleY="0.8" style="-fx-background-color: none;" stylesheets="@../css/utilities.css">
+                <Button contentDisplay="CENTER" layoutX="25.0" layoutY="8.0" mnemonicParsing="false" onAction="#MenuButton" scaleX="0.8" scaleY="0.8" style="-fx-background-color: none;" stylesheets="@../css/utilities.css" AnchorPane.leftAnchor="0.0">
                     <graphic>
                         <SVGPath content="M8 42V18L24.1 6 40 18v24H28.3V27.75h-8.65V42Zm3-3h5.65V24.75H31.3V39H37V19.5L24.1 9.75 11 19.5Zm13-14.65Z" fill="#94618e" styleClass="btn" />
                     </graphic>
@@ -66,8 +66,8 @@
         </bottom>
         <center>
             <AnchorPane prefHeight="681.0" prefWidth="892.0" BorderPane.alignment="CENTER">
-                <Pane layoutX="89.0" layoutY="75.0" prefHeight="549.0" prefWidth="717.0" style="-fx-border-color: #94618e; -fx-border-width: 10;">
-                    <TableView fx:id="TableViewProfessor" layoutX="10.0" layoutY="76.0" prefHeight="466.0" prefWidth="699.0">
+                <Pane layoutX="12.0" layoutY="75.0" prefHeight="594.0" prefWidth="1231.0" style="-fx-border-color: #94618e; -fx-border-width: 10;">
+                    <TableView fx:id="TableViewProfessor" layoutX="10.0" layoutY="76.0" prefHeight="509.0" prefWidth="1211.0">
                         <columns>
                             <TableColumn fx:id="tableColumnid" prefWidth="75.0" text="ID" />
                             <TableColumn fx:id="tableColumnName" prefWidth="75.0" text="Nome" />
@@ -91,7 +91,7 @@
                   </cursor>
                </Button>
                 </Pane>
-                <Text fill="#511a1a" layoutX="344.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista professores">
+                <Text fill="#511a1a" layoutX="533.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lista professores">
                     <font>
                         <Font name="Arial Black" size="20.0" />
                     </font>

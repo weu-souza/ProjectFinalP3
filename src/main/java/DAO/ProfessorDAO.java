@@ -1,6 +1,6 @@
 package DAO;
 
-import DTO.DisciplinaDTO;
+
 import DTO.ProfessorDTO;
 
 import java.sql.*;
@@ -19,7 +19,7 @@ public class ProfessorDAO {
             pstm = conn.prepareStatement(sql);
             pstm.setString(1, objProfessor.getNome());
             pstm.execute();
-            pstm.close();
+            DB.closeStatement(pstm);
         }
         catch (SQLException e)
         {
@@ -42,7 +42,7 @@ public class ProfessorDAO {
 
             }
             DB.closeResultSet(rs);
-           DB.closePSTM(pstm);
+           DB.closeStatement(pstm);
         }
         catch (SQLException e){
             throw new DbException(e.getMessage());
@@ -58,7 +58,7 @@ public class ProfessorDAO {
             pstm.setInt(2,professorDTO.getID());
             pstm.setString(1,professorDTO.getNome());
             pstm.execute();
-            DB.closePSTM(pstm);
+            DB.closeStatement(pstm);
 
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
@@ -74,7 +74,7 @@ public class ProfessorDAO {
             pstm.setInt(1,professorDTO.getID());
             pstm.execute();
 
-            DB.closePSTM(pstm);
+            DB.closeStatement(pstm);
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
 

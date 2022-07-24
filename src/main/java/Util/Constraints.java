@@ -1,5 +1,6 @@
 package Util;
 
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 public class Constraints {

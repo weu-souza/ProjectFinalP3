@@ -15,6 +15,9 @@ public class ProfessorDTO {
        setID(ID);
     }
 
+    public ProfessorDTO() {
+    }
+
 
     public String getNome() {
         return nome;

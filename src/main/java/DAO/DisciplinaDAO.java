@@ -1,7 +1,6 @@
 package DAO;
 
 import DTO.DisciplinaDTO;
-import DTO.ProfessorDTO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -24,7 +23,7 @@ public class DisciplinaDAO {
             pstm.setString(1, ObjDisciplina.getNomeDisciplina());
             pstm.setInt(2,ObjDisciplina.getCodProfessor());
             pstm.execute();
-            pstm.close();
+            DB.closeStatement(pstm);
         }
         catch (SQLException e)
         {
@@ -47,7 +46,7 @@ public class DisciplinaDAO {
 
             }
             DB.closeResultSet(rs);
-            DB.closePSTM(pstm);
+            DB.closeStatement(pstm);
         }
         catch (SQLException e){
             throw new DbException(e.getMessage());
@@ -60,11 +59,11 @@ public class DisciplinaDAO {
         conn = DB.getConnection();
         try{
             pstm = conn.prepareStatement(sql);
-            pstm.setInt(3,disciplinaDTO.getID());
+            pstm.setInt(3,disciplinaDTO.getIDDisciplina());
             pstm.setString(1,disciplinaDTO.getNomeDisciplina());
             pstm.setInt(2,disciplinaDTO.getCodProfessor());
             pstm.execute();
-            DB.closePSTM(pstm);
+            DB.closeStatement(pstm);
 
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
@@ -77,10 +76,10 @@ public class DisciplinaDAO {
         conn = DB.getConnection();
         try{
             pstm = conn.prepareStatement(sql);
-            pstm.setInt(1,disciplinaDTO.getID());
+            pstm.setInt(1,disciplinaDTO.getIDDisciplina());
             pstm.execute();
 
-            DB.closePSTM(pstm);
+            DB.closeStatement(pstm);
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
 

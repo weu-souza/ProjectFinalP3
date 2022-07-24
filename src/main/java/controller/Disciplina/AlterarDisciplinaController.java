@@ -1,17 +1,20 @@
 package controller.Disciplina;
 
 import DAO.DisciplinaDAO;
-import DAO.ProfessorDAO;
 import DTO.DisciplinaDTO;
-import DTO.ProfessorDTO;
 import Util.Alerts;
+import Util.Constraints;
 import com.example.p3project.App;
 import Util.Telas;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
-public class AlterarDisciplinaController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class AlterarDisciplinaController implements Initializable {
 
     @FXML private TextField idAlterarD,newNameAlterar,newProfessorAlterar;
     @FXML
@@ -57,5 +60,11 @@ public class AlterarDisciplinaController {
        objDiscDao.atualizarDisciplina(D);
         Alerts.showAlert("","","Enviado, atualize", Alert.AlertType.CONFIRMATION);
 
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Constraints.setTextFieldInteger(idAlterarD);
+        Constraints.setTextFieldInteger(newProfessorAlterar);
     }
 }

@@ -6,8 +6,6 @@ import DTO.DisciplinaDTO;
 import Util.Alerts;
 import Util.Telas;
 import com.example.p3project.App;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -75,18 +73,11 @@ public class DisciplinaController implements Initializable {
 
 
     public void initTable(){
-        tabelaID.setCellValueFactory(new PropertyValueFactory<>("ID"));
+        tabelaID.setCellValueFactory(new PropertyValueFactory<>("IDDisciplina"));
         tableName.setCellValueFactory(new PropertyValueFactory<>("nomeDisciplina"));
         tableCodPrf.setCellValueFactory(new PropertyValueFactory<>("codProfessor"));
         TableViewDisciplina.setItems(atualizarTabela());
-        TableViewDisciplina.getSelectionModel().selectedItemProperty().addListener( new ChangeListener<DisciplinaDTO>() {
-            @Override
-            public void changed(ObservableValue<? extends DisciplinaDTO> observable, DisciplinaDTO oldValue, DisciplinaDTO newValue) {
-                selecionada = newValue;
-            }
-        });
-
-
+        TableViewDisciplina.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> selecionada = newValue);
     }
     public ObservableList<DisciplinaDTO> atualizarTabela(){
         DisciplinaDAO dao = new DisciplinaDAO();
@@ -95,9 +86,9 @@ public class DisciplinaController implements Initializable {
     }
     private ObservableList<DisciplinaDTO> pesquisaD(){
         ObservableList<DisciplinaDTO> pesquisarDisciplinaObs = FXCollections.observableArrayList();
-        for (int i = 0; i< discipinaDTOObservableList.size(); i++){
-            if (discipinaDTOObservableList.get(i).getNomeDisciplina().contains(pesquisarDisciplina.getText())){
-                pesquisarDisciplinaObs.add(discipinaDTOObservableList.get(i));
+        for (DisciplinaDTO disciplinaDTO : discipinaDTOObservableList) {
+            if (disciplinaDTO.getNomeDisciplina().contains(pesquisarDisciplina.getText())) {
+                pesquisarDisciplinaObs.add(disciplinaDTO);
             }
         }
         return pesquisarDisciplinaObs;

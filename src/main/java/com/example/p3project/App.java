@@ -65,29 +65,47 @@ public class App extends Application {
 //    }
 
         stage.setScene(loginScene);
+        stage.centerOnScreen();
+//        stage.resizableProperty().setValue(false);
 
-        stage.resizableProperty().setValue(false);
 
         stage.show();
     }
 
     public static void changeScreen(Telas Screen) {
         switch (Screen) {
-            case LOGIN -> stage.setScene(loginScene);
-            case MAIN -> stage.setScene(mainViewScene);
-
-            case PROFESSOR -> stage.setScene(professorScene);
-
-            case DISCIPLINA -> stage.setScene(disciplinaScene);
-
-            case ADICIONAR -> stage.setScene(adicionarScene);
-
-            case ALTERAR -> stage.setScene(alterarScene);
-
-            case ADDDISCIPLINA -> stage.setScene(adicionarDScene);
-
-            case ALTDISCIPLINA -> stage.setScene(alterarDScene);
-
+            case LOGIN -> {
+                stage.setScene(loginScene);
+                stage.centerOnScreen();
+            }
+            case MAIN -> {
+                stage.setScene(mainViewScene);
+                stage.centerOnScreen();
+            }
+            case PROFESSOR -> {
+                stage.setScene(professorScene);
+                stage.centerOnScreen();
+            }
+            case DISCIPLINA -> {
+                stage.setScene(disciplinaScene);
+                stage.centerOnScreen();
+            }
+            case ADICIONAR -> {
+                stage.setScene(adicionarScene);
+                stage.centerOnScreen();
+            }
+            case ALTERAR -> {
+                stage.setScene(alterarScene);
+                stage.centerOnScreen();
+            }
+            case ADDDISCIPLINA -> {
+                stage.setScene(adicionarDScene);
+                stage.centerOnScreen();
+            }
+            case ALTDISCIPLINA -> {
+                stage.setScene(alterarDScene);
+                stage.centerOnScreen();
+            }
         }
     }
 

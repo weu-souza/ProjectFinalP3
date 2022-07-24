@@ -7,8 +7,6 @@ import Util.Alerts;
 import Util.Telas;
 import com.example.p3project.App;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -87,11 +85,11 @@ return professorDTOObservableList;
 }
 private ObservableList<ProfessorDTO> pesquisa(){
         ObservableList<ProfessorDTO> pesquisarProfessorObs = FXCollections.observableArrayList();
-        for (int i = 0; i< professorDTOObservableList.size(); i++){
-            if (professorDTOObservableList.get(i).getNome().contains(pesquisarProfessor.getText())){
-                pesquisarProfessorObs.add(professorDTOObservableList.get(i));
-            }
+    for (ProfessorDTO professorDTO : professorDTOObservableList) {
+        if (professorDTO.getNome().contains(pesquisarProfessor.getText())) {
+            pesquisarProfessorObs.add(professorDTO);
         }
+    }
         return pesquisarProfessorObs;
 }
 

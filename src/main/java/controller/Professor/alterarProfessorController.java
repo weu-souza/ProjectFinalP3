@@ -3,13 +3,18 @@ package controller.Professor;
 import DAO.ProfessorDAO;
 import DTO.ProfessorDTO;
 import Util.Alerts;
+import Util.Constraints;
 import com.example.p3project.App;
 import Util.Telas;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
-public class alterarProfessorController {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class alterarProfessorController implements Initializable {
     @FXML private TextField idAlterar, nomeAlterar;
 
     @FXML
@@ -58,6 +63,11 @@ Alterar();
         objProfDao.atualizarProfessor(professor);
         Alerts.showAlert("","","Enviado, atualize", Alert.AlertType.CONFIRMATION);
 
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Constraints.setTextFieldInteger(idAlterar);
     }
 }
 

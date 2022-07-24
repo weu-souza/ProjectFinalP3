@@ -3,28 +3,20 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
-   <BorderPane prefHeight="796.0" style="-fx-background-color: #fcfcfc;">
-      <top>
-         <AnchorPane prefHeight="65.0" style="-fx-background-color: #e2dcdb;" BorderPane.alignment="CENTER">
-            <BorderPane.margin>
-               <Insets />
-            </BorderPane.margin>
-            <Button layoutX="125.0" layoutY="18.0" mnemonicParsing="false" onAction="#MenuItemProfessor" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@css/utilities.css" text="Professor">
-               <font>
-                  <Font name="Arial Bold" size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutX="220.0" layoutY="18.0" mnemonicParsing="false" onAction="#MenuItemDisciplina" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@css/utilities.css" text="Disciplina">
+
+<AnchorPane prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainViewController">
+   <children>
+      <Pane prefHeight="78.0" style="-fx-background-color: #e2dcdb;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button layoutX="175.0" layoutY="20.0" mnemonicParsing="false" onAction="#MenuItemDisciplina" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@css/utilities.css" text="Disciplina">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -32,7 +24,80 @@
                   <Font name="Arial Bold" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="953.0" layoutY="8.0" mnemonicParsing="false" onAction="#SairButton" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@css/utilities.css" text="sair">
+            <Button layoutX="14.0" layoutY="10.0" mnemonicParsing="false" onAction="#MenuButton" style="-fx-background-color: none;">
+               <graphic>
+                  <SVGPath content="M8 42V18L24.1 6 40 18v24H28.3V27.75h-8.65V42Zm3-3h5.65V24.75H31.3V39H37V19.5L24.1 9.75 11 19.5Zm13-14.65Z" fill="#94618e" scaleX="0.8" scaleY="0.8" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="87.0" layoutY="20.0" mnemonicParsing="false" onAction="#MenuItemProfessor" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@css/utilities.css" text="Professor">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button alignment="BOTTOM_LEFT" graphicTextGap="0.0" layoutX="1284.0" layoutY="19.0" mnemonicParsing="false" onAction="#SairButton" prefHeight="40.0" prefWidth="102.0" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@css/utilities.css" text="sair" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <SVGPath content="M9 42q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6h14.55v3H9v30h14.55v3Zm24.3-9.25-2.15-2.15 5.1-5.1h-17.5v-3h17.4l-5.1-5.1 2.15-2.15 8.8 8.8Z" fill="#94618e" scaleX="0.5" scaleY="0.5" />
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="15.0" layoutY="102.0" style="-fx-border-color: #94618e; -fx-border-width: 10;" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="102.0">
+         <TableView fx:id="TableViewMain" layoutX="10.0" layoutY="101.0" prefHeight="572.0" prefWidth="1353.0">
+            <columns>
+               <TableColumn fx:id="tabelaIDPrf" prefWidth="75.0" text="ID" />
+               <TableColumn fx:id="tableNamePrf" editable="false" prefWidth="500.0" text="Professor" />
+               <TableColumn fx:id="tableNameDsc" maxWidth="1200.0" prefWidth="600.0" text="Disciplina" />
+            </columns>
+         </TableView>
+         <TextField fx:id="pesquisarProfessorDisciplina" layoutX="71.0" layoutY="35.0" promptText="Pesquisar" style="-fx-border-color: #94618e; -fx-background-color: transparent; -fx-border-width: 0 0 2 0;" />
+         <Button layoutX="222.0" layoutY="26.0" mnemonicParsing="false" onAction="#btAttMain" style="-fx-background-color: transparent;">
+            <graphic>
+               <SVGPath content="M8.35 40v-3h6.5l-.75-.6q-3.2-2.55-4.65-5.55-1.45-3-1.45-6.7 0-5.3 3.125-9.525Q14.25 10.4 19.35 8.8v3.1q-3.75 1.45-6.05 4.825T11 24.15q0 3.15 1.175 5.475 1.175 2.325 3.175 4.025l1.5 1.05v-6.2h3V40Zm20.35-.75V36.1q3.8-1.45 6.05-4.825T37 23.85q0-2.4-1.175-4.875T32.75 14.6l-1.45-1.3v6.2h-3V8h11.5v3h-6.55l.75.7q3 2.8 4.5 6t1.5 6.15q0 5.3-3.1 9.55-3.1 4.25-8.2 5.85Z" fill="#94618e" scaleX="0.5" scaleY="0.5" />
+            </graphic>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+         <Button layoutX="19.0" layoutY="24.0" mnemonicParsing="false" onAction="#btnPesquisarPrfDsc" rotate="90.0" style="-fx-background-color: transparent;">
+            <graphic>
+               <SVGPath content="M39.8 41.95 26.65 28.8q-1.5 1.3-3.5 2.025-2 .725-4.25.725-5.4 0-9.15-3.75T6 18.75q0-5.3 3.75-9.05 3.75-3.75 9.1-3.75 5.3 0 9.025 3.75 3.725 3.75 3.725 9.05 0 2.15-.7 4.15-.7 2-2.1 3.75L42 39.75Zm-20.95-13.4q4.05 0 6.9-2.875Q28.6 22.8 28.6 18.75t-2.85-6.925Q22.9 8.95 18.85 8.95q-4.1 0-6.975 2.875T9 18.75q0 4.05 2.875 6.925t6.975 2.875Z" fill="#94618e" scaleX="0.5" scaleY="0.5" />
+            </graphic>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+      </Pane>
+      <AnchorPane prefHeight="65.0" prefWidth="1410.0" style="-fx-background-color: #e2dcdb;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button layoutX="72.0" layoutY="18.0" mnemonicParsing="false" onAction="#MenuItemProfessor" style="-fx-background-color: none; -fx-border-width: 0 0 2 0;" styleClass="Main-menu" stylesheets="@css/utilities.css" text="Professor">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="172.0" layoutY="18.0" mnemonicParsing="false" onAction="#MenuItemDisciplina" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@css/utilities.css" text="Disciplina">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="1292.0" layoutY="18.0" mnemonicParsing="false" onAction="#SairButton" prefHeight="30.0" prefWidth="94.0" style="-fx-background-color: none;" styleClass="Main-menu" stylesheets="@css/utilities.css" text="sair" AnchorPane.rightAnchor="0.0">
                <font>
                   <Font name="Arial Bold" size="14.0" />
                </font>
@@ -46,21 +111,15 @@
                   <Insets right="20.0" />
                </padding>
             </Button>
-            <Button layoutX="25.0" layoutY="8.0" mnemonicParsing="false" onAction="#MenuButton" scaleX="0.8" scaleY="0.8" style="-fx-background-color: none;">
+            <Button contentDisplay="CENTER" layoutX="9.0" layoutY="8.0" mnemonicParsing="false" onAction="#MenuButton" scaleX="0.8" scaleY="0.8" style="-fx-background-color: none;" stylesheets="@css/utilities.css" AnchorPane.leftAnchor="0.0">
                <graphic>
-                  <SVGPath content="M8 42V18L24.1 6 40 18v24H28.3V27.75h-8.65V42Zm3-3h5.65V24.75H31.3V39H37V19.5L24.1 9.75 11 19.5Zm13-14.65Z" fill="#94618e" />
+                  <SVGPath content="M8 42V18L24.1 6 40 18v24H28.3V27.75h-8.65V42Zm3-3h5.65V24.75H31.3V39H37V19.5L24.1 9.75 11 19.5Zm13-14.65Z" fill="#94618e" styleClass="btn" />
                </graphic>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-         </AnchorPane>
-      </top>
-      <bottom>
-         <AnchorPane prefHeight="50.0" prefWidth="878.0" style="-fx-background-color: #e2dcdb;" BorderPane.alignment="CENTER" />
-      </bottom>
-      <center>
-         <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
-      </center>
-   </BorderPane>
-</ScrollPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
