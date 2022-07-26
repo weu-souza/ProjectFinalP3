@@ -25,7 +25,12 @@ public class DisciplinaController implements Initializable {
     @FXML private TableColumn<DisciplinaDTO,Integer> tabelaID;
 
     @FXML private TableColumn<DisciplinaDTO,String> tableName;
-    @FXML private TableColumn<DisciplinaDTO,String> tableCodPrf;
+    @FXML public TableColumn<DisciplinaDTO,String> tableCodPrf;
+
+    public void setTableCodPrf(TableColumn<DisciplinaDTO, String> tableCodPrf) {
+        this.tableCodPrf = tableCodPrf;
+    }
+
     @FXML private TextField pesquisarDisciplina;
     @FXML ObservableList<DisciplinaDTO> discipinaDTOObservableList = FXCollections.observableArrayList();
     private DisciplinaDTO selecionada;
@@ -64,7 +69,7 @@ public class DisciplinaController implements Initializable {
     @FXML
     public void RemoverButton(){
         deletarDi();
-        Alerts.showAlert("","","Deletado, atualize", Alert.AlertType.CONFIRMATION);
+
     }
     @FXML
     public void btAtt(){
@@ -107,7 +112,8 @@ public class DisciplinaController implements Initializable {
     public void deletarDi(){
         if (selecionada!=null){
             DisciplinaDAO dao = new DisciplinaDAO();
-            dao.deletarDisciplina(selecionada);}
+            dao.deletarDisciplina(selecionada);
+            Alerts.showAlert("","","Deletado, atualize", Alert.AlertType.CONFIRMATION);}
         else {
             Alerts.showAlert("","","selecione um usuario", Alert.AlertType.ERROR);
         }

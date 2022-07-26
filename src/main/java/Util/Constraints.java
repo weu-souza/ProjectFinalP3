@@ -5,6 +5,7 @@ import javafx.scene.control.TextField;
 
 public class Constraints {
 
+//premitir apenas textos com numeros inteiros
     public static void setTextFieldInteger(TextField txt) {
         txt.textProperty().addListener((obs, oldValue, newValue) -> {
             if (newValue != null && !newValue.matches("\\d*")) {

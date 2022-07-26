@@ -2,6 +2,8 @@ package DAO;
 
 
 import DTO.ProfessorDTO;
+import Util.Alerts;
+import javafx.scene.control.Alert;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -76,8 +78,8 @@ public class ProfessorDAO {
 
             DB.closeStatement(pstm);
         } catch (SQLException e) {
+            Alerts.showAlert("","","remova a disciplina a qual o professor esta vinculado", Alert.AlertType.ERROR);
             throw new DbException(e.getMessage());
-
         }
     }
 }

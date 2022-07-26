@@ -60,7 +60,7 @@ public class ProfessorController implements Initializable {
     @FXML
     public void RemoverButton(){
         deletarPro();
-        Alerts.showAlert("","","Deletado, atualize", Alert.AlertType.CONFIRMATION);
+
     }
 
     @FXML
@@ -73,16 +73,23 @@ public class ProfessorController implements Initializable {
 
 
 public void initTable(){
+//        coloca os valores de ID na coluna de ID.
     tableColumnid.setCellValueFactory(new PropertyValueFactory<>("ID"));
+//    coloca os valores de nome na coluna nome
     tableColumnName.setCellValueFactory(new PropertyValueFactory<>("nome"));
+//    insere os valores do observable list na tabela
     TableViewProfessor.setItems(atualizarTabela());
+//    faz algo quando uma parte da tabela e selecionada
     TableViewProfessor.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> selecionada = newValue);
 }
+//pega os valores do professor no banco de dados e cria um observable list
 public ObservableList<ProfessorDTO> atualizarTabela(){
 ProfessorDAO dao = new ProfessorDAO();
 professorDTOObservableList = FXCollections.observableArrayList(dao.pesquisarProfessor());
 return professorDTOObservableList;
 }
+
+//pesquisa todos os valores de professor
 private ObservableList<ProfessorDTO> pesquisa(){
         ObservableList<ProfessorDTO> pesquisarProfessorObs = FXCollections.observableArrayList();
     for (ProfessorDTO professorDTO : professorDTOObservableList) {
@@ -97,16 +104,18 @@ private ObservableList<ProfessorDTO> pesquisa(){
 TableViewProfessor.setItems(pesquisa());
     }
 
-
+//metodo que faz algo quando a tela e iniciada
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         initTable();
     }
-
+//quando uma tela e selecionada e apertar o botão ele deleta
     public void deletarPro(){
         if (selecionada!=null){
         ProfessorDAO dao = new ProfessorDAO();
-        dao.deletarProfessor(selecionada);}
+        dao.deletarProfessor(selecionada);
+            Alerts.showAlert("","","Deletado, atualize", Alert.AlertType.CONFIRMATION);
+        }
         else {
             Alerts.showAlert("","","selecione um usuario", Alert.AlertType.ERROR);
         }
