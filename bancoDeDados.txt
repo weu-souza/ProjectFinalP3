@@ -1,0 +1,24 @@
+create database projetop3;
+CREATE TABLE `login` (
+  `idLogin` int NOT NULL,
+  `nome` varchar(45) DEFAULT NULL,
+  `senha` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`idLogin`),
+  UNIQUE KEY `nome` (`nome`)
+);
+INSERT INTO `login` VALUES (1,'adm','123'),(2,'adm1','123');
+
+CREATE TABLE `professor` (
+  `idProfessor` int NOT NULL AUTO_INCREMENT,
+  `nomeProfessor` varchar(45) NOT NULL,
+  PRIMARY KEY (`idProfessor`)
+);
+
+CREATE TABLE `disciplina` (
+  `idDisciplina` int NOT NULL AUTO_INCREMENT,
+  `nomeDisciplina` varchar(45) NOT NULL,
+  `cod_professor` int DEFAULT NULL,
+  PRIMARY KEY (`idDisciplina`),
+  CONSTRAINT `fk_disciplina` FOREIGN KEY (`cod_professor`) REFERENCES `professor` (`idProfessor`)
+);
+
